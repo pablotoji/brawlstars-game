@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate das nächste Brawler</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: linear-gradient(to right, #ffcc70, #ff7e5f);
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+        }
+
+        h1 {
+            color: #ff7e5f;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            margin-bottom: 20px;
+            border: 2px solid #ff7e5f;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #ff7e5f;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ffcc70;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 16px;
+            color: red;
+        }
+
+        .success {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Schreibe den nächsten Brawler:</h1>
+    <label>Ash, Bea, Collete, Edgar...</label>
+    <input type="text" id="solution" placeholder="Deine Antwort hier...">
+    <button onclick="checkAnswer()">Weiter</button>
+    <p id="message" class="message"></p>
+</div>
+
+<script>
+    function checkAnswer() {
+        const solution = document.getElementById("solution").value.trim().toLowerCase();
+        const messageElement = document.getElementById("message");
+
+        if (solution === "frank") {
+            messageElement.innerHTML = "<span class='success'>Korrekt! Geht zum Gemeinschaftsraum!.</span>";
+            setTimeout(function() {
+                window.location.href = "gemeinschaftsraum.html"; // Puedes cambiar esta URL según tus necesidades
+            }, 2000); // Redirigir después de 2 segundos
+        } else {
+            messageElement.textContent = "Falsche Antwort, versuche es erneut!";
+        }
+    }
+</script>
+
+</body>
+</html>
