@@ -88,11 +88,11 @@
         const solution = document.getElementById("solution").value.trim().toLowerCase();
         const messageElement = document.getElementById("message");
 
-        if (solution === "Frank") {
+        if (solution === "frank") {
             messageElement.innerHTML = "<span class='success'>Korrekt! Geht zum Gemeinschaftsraum!.</span>";
             setTimeout(function() {
                 window.location.href = "gemeinschaftsraum.html"; // Puedes cambiar esta URL según tus necesidades
-            }, 2000); // Redirigir después de 2 segundos
+            }, 200000); // Redirigir después de 2 segundos //
         } else {
             messageElement.textContent = "Falsche Antwort, versuche es erneut!";
         }
