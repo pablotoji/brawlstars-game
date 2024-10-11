@@ -45,6 +45,7 @@
             margin-bottom: 20px;
             border: 2px solid #ff7e5f;
             border-radius: 5px;
+            box-sizing: border-box; /* Asegura que el padding no expanda el input fuera del contenedor */
         }
 
         button {
@@ -79,7 +80,7 @@
     <h1>Schreibe den nächsten Brawler:</h1>
     <label>Ash, Bea, Collete, Edgar...</label>
     <input type="text" id="solution" placeholder="Deine Antwort hier...">
-    <button onclick="checkAnswer()">Antwort</button>
+    <button onclick="checkAnswer()">Weiter</button>
     <p id="message" class="message"></p>
 </div>
 
@@ -92,7 +93,7 @@
             messageElement.innerHTML = "<span class='success'>Korrekt! Geht zum Gemeinschaftsraum!.</span>";
             setTimeout(function() {
                 window.location.href = "gemeinschaftsraum.html"; // Puedes cambiar esta URL según tus necesidades
-            }, 200000); // Redirigir después de 2 segundos //
+            }, 2000); // Redirigir después de 2 segundos
         } else {
             messageElement.textContent = "Falsche Antwort, versuche es erneut!";
         }
