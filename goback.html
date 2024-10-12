@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasenquiz</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: linear-gradient(to right, #ffcc70, #ff7e5f);
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+        }
+
+        h1 {
+            color: #ff7e5f;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            margin-bottom: 20px;
+            border: 2px solid #ff7e5f;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #ff7e5f;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ffcc70;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 16px;
+            color: red;
+        }
+
+        .success {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Hasenquiz</h1>
+    <label>Ein Hase will eine Karotte am anderen Ende eines 100 Meter langen Gartens erreichen. Der Hase springt zuerst 50 Meter und danach in jedem Sprung die Hälfte der vorherigen Strecke. Wie viele Sprünge braucht er, um die Karotte auf mindestens 1 Meter zu erreichen?</label>
+    <input type="text" id="answer" placeholder="Deine Antwort hier...">
+    <button onclick="checkAnswer()">Antwort prüfen</button>
+    <p id="message" class="message"></p>
+</div>
+
+<script>
+    function checkAnswer() {
+        const answer = document.getElementById("answer").value.trim();
+        const messageElement = document.getElementById("message");
+
+        if (answer === "7") {
+            messageElement.innerHTML = "<span class='success'>Korrekt! Gehe zum Gemeinschaftsraum.</span>";
+        } else {
+            messageElement.textContent = "Falsche Antwort, versuche es erneut!";
+        }
+    }
+</script>
+
+</body>
+</html>
